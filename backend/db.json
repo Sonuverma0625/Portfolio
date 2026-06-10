@@ -22,7 +22,7 @@
         "CSS",
         "JavaScript"
       ],
-      "image": "/image/portfolio.png",
+      "image": "/image/portfolio-optimized.jpg",
       "live_link": "https://sonuportfolio0625.netlify.app/",
       "icon": "globe",
       "featured": true,
@@ -56,7 +56,7 @@
         "Express.js",
         "MongoDB"
       ],
-      "image": "/image/coffee.png",
+      "image": "/image/coffee-optimized.jpg",
       "live_link": "https://darkside-coffee.onrender.com/",
       "icon": "coffee",
       "featured": false,
@@ -71,7 +71,7 @@
         "CSS",
         "JavaScript"
       ],
-      "image": "/image/food.png",
+      "image": "/image/food-optimized.jpg",
       "icon": "utensils",
       "featured": false,
       "created_at": "2024-04-01T00:00:00.000Z"
@@ -85,7 +85,7 @@
         "CSS",
         "JavaScript"
       ],
-      "image": "/image/travel.png",
+      "image": "/image/travel-optimized.jpg",
       "icon": "plane",
       "featured": false,
       "created_at": "2024-05-01T00:00:00.000Z"
@@ -116,7 +116,7 @@
         "React",
         "Node.js"
       ],
-      "image": "/image/atomquest.png",
+      "image": "/image/atomquest-optimized.jpg",
       "live_link": "https://atom-gkdo.onrender.com/",
       "icon": "target",
       "featured": false,

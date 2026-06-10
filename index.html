@@ -7,7 +7,8 @@
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=mobile-side-nav">
+  <link rel="preload" as="image" href="/image/self3-optimized.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="style.css?v=fast-images">
  </head>
  <body class="h-full">
   <div class="portfolio-wrap" id="app">
@@ -47,7 +48,7 @@
      <div class="anim-slide-up delay-2 hero-visual">
       <div class="relative">
        <div class="absolute inset-0 rounded-2xl hero-photo-bg"></div>
-       <div id="hero-photo" class="w-full aspect-square rounded-2xl overflow-hidden flex items-center justify-center hero-photo-container"><img src="/image/self3.png" alt="Sonu Verma" class="profile-image">
+       <div id="hero-photo" class="w-full aspect-square rounded-2xl overflow-hidden flex items-center justify-center hero-photo-container"><img src="/image/self3-optimized.jpg" alt="Sonu Verma" class="profile-image" width="1448" height="1086" decoding="async" fetchpriority="high">
        </div>
       </div>
      </div>
@@ -59,7 +60,7 @@
      <div class="grid md:grid-cols-2 gap-8 scene-3d">
       <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-2">
        <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-1 media-frame">
-        <img src="/image/portfolio.png" alt="Portfolio Website preview" class="card-image">
+        <img src="/image/portfolio-optimized.jpg" alt="Portfolio Website preview" class="card-image" loading="lazy" decoding="async">
        </div>
        <h3 class="text-xl font-bold">Portfolio Website</h3>
        <p class="mt-2 text-sm color-secondary">A modern and responsive personal portfolio website showcasing my skills, projects, certifications, and contact details. Built with HTML, CSS, and JavaScript with smooth navigation and a clean UI.</p>
@@ -70,7 +71,7 @@
       </div>
       <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-3">
        <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-2 media-frame">
-        <img src="/image/e-comm.jpg" alt="Darkside E-commerce Website preview" class="card-image">
+        <img src="/image/e-comm.jpg" alt="Darkside E-commerce Website preview" class="card-image" loading="lazy" decoding="async">
        </div>
        <h3 class="text-xl font-bold">E-commerce Website - Darkside</h3>
        <p class="mt-2 text-sm color-secondary">A responsive e-commerce website with product listings, shopping cart, checkout flow, and smooth user experience. Designed with a modern UI and built using frontend technologies with backend support.</p>
@@ -81,7 +82,7 @@
       </div>
       <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-4">
        <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-3 media-frame">
-        <img src="/image/coffee.png" alt="Coffee Website preview" class="card-image">
+        <img src="/image/coffee-optimized.jpg" alt="Coffee Website preview" class="card-image" loading="lazy" decoding="async">
        </div>
        <h3 class="text-xl font-bold">Coffee Website</h3>
        <p class="mt-2 text-sm color-secondary">A full-stack coffee website with a modern UI, product sections, cart functionality, backend APIs, and database integration. Designed to provide a clean and smooth ordering experience.</p>
@@ -92,7 +93,7 @@
       </div>
       <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5">
        <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-4 media-frame">
-        <img src="/image/food.png" alt="Food Website preview" class="card-image">
+        <img src="/image/food-optimized.jpg" alt="Food Website preview" class="card-image" loading="lazy" decoding="async">
        </div>
        <h3 class="text-xl font-bold">Food Website</h3>
        <p class="mt-2 text-sm color-secondary">A responsive food website showcasing food items, recipes, categories, and contact sections. Built with modern design, attractive visuals, and interactive UI components.</p>
@@ -102,7 +103,7 @@
       </div>
       <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5">
        <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-1 media-frame">
-        <img src="/image/travel.png" alt="Travel Website preview" class="card-image">
+        <img src="/image/travel-optimized.jpg" alt="Travel Website preview" class="card-image" loading="lazy" decoding="async">
        </div>
        <h3 class="text-xl font-bold">Travel Website</h3>
        <p class="mt-2 text-sm color-secondary">A responsive travel website designed to showcase destinations, travel tips, booking inquiry sections, and smooth animations for a better user experience.</p>
@@ -112,7 +113,7 @@
       </div>
       <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5">
        <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-3 media-frame">
-        <img src="/image/maze.jpg" alt="Maze-Solving Robot Car" class="card-image">
+        <img src="/image/maze.jpg" alt="Maze-Solving Robot Car" class="card-image" loading="lazy" decoding="async">
        </div>
        <h3 class="text-xl font-bold">Maze-Solving Robot Car</h3>
        <p class="mt-2 text-sm color-secondary">An autonomous robot car designed to solve mazes using IR sensors, Arduino UNO, and L298N motor driver. It uses path-following logic and sensor-based decision-making.</p>
@@ -122,7 +123,7 @@
       </div>
       <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5">
        <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-2 media-frame">
-        <img src="/image/atomquest.png" alt="AtomQuest Goal Setting and Tracking Portal preview" class="card-image">
+        <img src="/image/atomquest-optimized.jpg" alt="AtomQuest Goal Setting and Tracking Portal preview" class="card-image" loading="lazy" decoding="async">
        </div>
        <h3 class="text-xl font-bold">AtomQuest Goal Setting &amp; Tracking Portal</h3>
        <p class="mt-2 text-sm color-secondary">A digital goal-setting and tracking portal designed to help organizations manage employee goals, quarterly check-ins, alignment, visibility, and performance tracking.</p>
@@ -167,7 +168,7 @@
     <div class="about-showcase">
      <div class="about-image-wrap">
       <div class="about-photo-card rounded-2xl overflow-hidden">
-       <img src="/image/self2.png" alt="Sonu Verma" class="profile-image">
+       <img src="/image/self2-optimized.jpg" alt="Sonu Verma" class="profile-image" width="1087" height="1447" loading="lazy" decoding="async">
       </div>
      </div>
      <div class="about-content-panel">
@@ -296,7 +297,7 @@
     <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-16 anim-fade-rotate delay-1">Certifications</h2>
     <div class="grid md:grid-cols-2 gap-8 scene-3d">
      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-3">
-      <div class="certificate-media media-frame mb-6"><img src="/image/aws.png" alt="AWS Cloud Practitioner Essentials" class="card-image"></div>
+      <div class="certificate-media media-frame mb-6"><img src="/image/aws.png" alt="AWS Cloud Practitioner Essentials" class="card-image" loading="lazy" decoding="async"></div>
       <div class="flex justify-between items-start mb-4">
        <div>
         <h3 class="text-xl font-bold">AWS Cloud Practitioner Essentials</h3>
@@ -306,7 +307,7 @@
       <p class="text-sm color-secondary">Completed AWS Cloud Practitioner Essentials and gained understanding of cloud computing fundamentals, AWS services, cloud architecture, security, and deployment concepts.</p>
      </div>
      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-4">
-      <div class="certificate-media media-frame mb-6"><img src="/image/edunet-ai.png" alt="AI and Machine Learning Internship certificate" class="card-image"></div>
+      <div class="certificate-media media-frame mb-6"><img src="/image/edunet-ai.png" alt="AI and Machine Learning Internship certificate" class="card-image" loading="lazy" decoding="async"></div>
       <div class="flex justify-between items-start mb-4">
        <div>
         <h3 class="text-xl font-bold">6-Week Internship in Artificial Intelligence &amp; Machine Learning</h3>
@@ -316,7 +317,7 @@
       <p class="text-sm color-secondary">Completed a 6-week AI/ML internship focused on machine learning fundamentals, data processing, model building, and practical AI-based project development.</p>
      </div>
      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5">
-      <div class="certificate-media media-frame mb-6"><img src="/image/accenture.jpeg" alt="Accenture Developer and Technology Job Simulation" class="card-image"></div>
+      <div class="certificate-media media-frame mb-6"><img src="/image/accenture.jpeg" alt="Accenture Developer and Technology Job Simulation" class="card-image" loading="lazy" decoding="async"></div>
       <div class="flex justify-between items-start mb-4">
        <div>
         <h3 class="text-xl font-bold">Accenture Developer &amp; Technology Job Simulation</h3>
@@ -326,7 +327,7 @@
       <p class="text-sm color-secondary">Completed a virtual job simulation focused on software development, technology consulting, problem-solving, and real-world development tasks.</p>
      </div>
      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-2">
-      <div class="certificate-media media-frame mb-6"><img src="/image/jp.jpg" alt="JPMorgan Chase Software Engineering Job Simulation" class="card-image"></div>
+      <div class="certificate-media media-frame mb-6"><img src="/image/jp.jpg" alt="JPMorgan Chase Software Engineering Job Simulation" class="card-image" loading="lazy" decoding="async"></div>
       <div class="flex justify-between items-start mb-4">
        <div>
         <h3 class="text-xl font-bold">Software Engineering Job Simulation</h3>
@@ -336,7 +337,7 @@
       <p class="text-sm color-secondary">Completed JPMorgan Chase Software Engineering Job Simulation and gained practical experience in software engineering workflows, debugging, code optimization, and real-world engineering tasks.</p>
      </div>
      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-3">
-      <div class="certificate-media media-frame mb-6"><img src="/image/tata.png" alt="Tata GenAI-Powered Data Analytics Job Simulation" class="card-image"></div>
+      <div class="certificate-media media-frame mb-6"><img src="/image/tata.png" alt="Tata GenAI-Powered Data Analytics Job Simulation" class="card-image" loading="lazy" decoding="async"></div>
       <div class="flex justify-between items-start mb-4">
        <div>
         <h3 class="text-xl font-bold">GenAI-Powered Data Analytics Job Simulation</h3>
@@ -346,7 +347,7 @@
       <p class="text-sm color-secondary">Completed Tata GenAI-Powered Data Analytics Job Simulation, learning how generative AI can support data analysis, insights generation, automation, and business decision-making.</p>
      </div>
      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-4">
-      <div class="certificate-media media-frame mb-6"><img src="/image/hcl.jpeg" alt="India AI Impact Buildathon certificate" class="card-image"></div>
+      <div class="certificate-media media-frame mb-6"><img src="/image/hcl.jpeg" alt="India AI Impact Buildathon certificate" class="card-image" loading="lazy" decoding="async"></div>
       <div class="flex justify-between items-start mb-4">
        <div>
         <h3 class="text-xl font-bold">India AI Impact Buildathon</h3>
@@ -356,7 +357,7 @@
       <p class="text-sm color-secondary">Participated in the India AI Impact Buildathon, a nationwide AI innovation challenge conducted at India AI Impact Summit 2026, demonstrating AI-led problem solving and solution-building skills.</p>
      </div>
      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5">
-      <div class="certificate-media media-frame mb-6"><img src="/image/ey.jpeg" alt="EY Techathon 6.0 certificate" class="card-image"></div>
+      <div class="certificate-media media-frame mb-6"><img src="/image/ey.jpeg" alt="EY Techathon 6.0 certificate" class="card-image" loading="lazy" decoding="async"></div>
       <div class="flex justify-between items-start mb-4">
        <div>
         <h3 class="text-xl font-bold">EY Techathon 6.0</h3>
@@ -366,7 +367,7 @@
       <p class="text-sm color-secondary">Participated in Round 1: Executive Summary Submission of EY Techathon 6.0, gaining exposure to technology-driven problem solving, innovation, and structured solution presentation.</p>
      </div>
      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-2">
-      <div class="certificate-media media-frame mb-6"><img src="/image/pd.png" alt="Python Certification" class="card-image"></div>
+      <div class="certificate-media media-frame mb-6"><img src="/image/pd.png" alt="Python Certification" class="card-image" loading="lazy" decoding="async"></div>
       <div class="flex justify-between items-start mb-4">
        <div>
         <h3 class="text-xl font-bold">Python Certification</h3>
@@ -376,7 +377,7 @@
       <p class="text-sm color-secondary">Completed Python certification covering programming fundamentals, logic building, and practical Python concepts.</p>
      </div>
      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-3">
-      <div class="certificate-media media-frame mb-6"><img src="/image/ui.png" alt="UI/UX Design Certification" class="card-image"></div>
+      <div class="certificate-media media-frame mb-6"><img src="/image/ui.png" alt="UI/UX Design Certification" class="card-image" loading="lazy" decoding="async"></div>
       <div class="flex justify-between items-start mb-4">
        <div>
         <h3 class="text-xl font-bold">UI/UX Design Certification</h3>
@@ -392,25 +393,25 @@
     <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-16 anim-fade-rotate delay-1">Experience &amp; Job Simulations</h2>
     <div class="grid md:grid-cols-2 gap-8 scene-3d experience-card-grid">
       <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-2 experience-item-card">
-        <div class="experience-media media-frame mb-5"><img src="/image/edunet-ai.png" alt="Edunet Foundation AI/ML Internship" class="card-image"></div>
+        <div class="experience-media media-frame mb-5"><img src="/image/edunet-ai.png" alt="Edunet Foundation AI/ML Internship" class="card-image" loading="lazy" decoding="async"></div>
         <h3 class="text-xl font-bold">6-Week Internship in Artificial Intelligence &amp; Machine Learning</h3>
         <p class="text-sm mt-1 color-primary">Edunet Foundation / AICTE</p>
         <p class="mt-3 text-sm leading-relaxed color-secondary">Completed a 6-week AI/ML internship focused on machine learning fundamentals, data processing, model building, and practical AI-based project development.</p>
       </div>
       <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-3 experience-item-card">
-        <div class="experience-media media-frame mb-5"><img src="/image/accenture.jpeg" alt="Accenture Developer and Technology Job Simulation" class="card-image"></div>
+        <div class="experience-media media-frame mb-5"><img src="/image/accenture.jpeg" alt="Accenture Developer and Technology Job Simulation" class="card-image" loading="lazy" decoding="async"></div>
         <h3 class="text-xl font-bold">Accenture Developer &amp; Technology Job Simulation</h3>
         <p class="text-sm mt-1 color-primary">Accenture (Forage)</p>
         <p class="mt-3 text-sm leading-relaxed color-secondary">Completed a virtual job simulation focused on software development, technology consulting, problem-solving, and real-world development tasks.</p>
       </div>
       <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-4 experience-item-card">
-        <div class="experience-media media-frame mb-5"><img src="/image/jp.jpg" alt="JPMorgan Chase Software Engineering Job Simulation" class="card-image"></div>
+        <div class="experience-media media-frame mb-5"><img src="/image/jp.jpg" alt="JPMorgan Chase Software Engineering Job Simulation" class="card-image" loading="lazy" decoding="async"></div>
         <h3 class="text-xl font-bold">Software Engineering Job Simulation</h3>
         <p class="text-sm mt-1 color-primary">JPMorgan Chase &amp; Co. (Forage)</p>
         <p class="mt-3 text-sm leading-relaxed color-secondary">Completed JPMorgan Chase Software Engineering Job Simulation and gained practical experience in software engineering workflows, debugging, code optimization, and real-world engineering tasks.</p>
       </div>
       <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5 experience-item-card">
-        <div class="experience-media media-frame mb-5"><img src="/image/tata.png" alt="Tata GenAI-Powered Data Analytics Job Simulation" class="card-image"></div>
+        <div class="experience-media media-frame mb-5"><img src="/image/tata.png" alt="Tata GenAI-Powered Data Analytics Job Simulation" class="card-image" loading="lazy" decoding="async"></div>
         <h3 class="text-xl font-bold">GenAI-Powered Data Analytics Job Simulation</h3>
         <p class="text-sm mt-1 color-primary">Tata (Forage)</p>
         <p class="mt-3 text-sm leading-relaxed color-secondary">Completed Tata GenAI-Powered Data Analytics Job Simulation, learning how generative AI can support data analysis, insights generation, automation, and business decision-making.</p>
