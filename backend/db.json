@@ -1,0 +1,284 @@
+{
+  "portfolio": {
+    "name": "Sonu Verma",
+    "brand_name": "Darkside",
+    "tagline": "Full Stack Developer | C++ Programmer | AI/ML Enthusiast",
+    "currently": "B.Tech Electronics & Communication Engineering Student",
+    "about": "I am Sonu, a Full Stack Developer, C++ Programmer, and AI/ML Enthusiast currently pursuing B.Tech in Electronics and Communication Engineering. I have experience in building responsive websites, full-stack applications, and interactive user interfaces using HTML, CSS, JavaScript, React, Node.js, Express.js, MongoDB, and MySQL.",
+    "email": "vermasonu0625144@gmail.com",
+    "phone": "+91 9569695752",
+    "github": "https://github.com/Sonuverma0625",
+    "linkedin": "https://linkedin.com/in/sonu0625",
+    "twitter": "https://x.com/Iam_sonu0625",
+    "resume_url": "mailto:vermasonu0625144@gmail.com"
+  },
+  "projects": [
+    {
+      "id": "1",
+      "title": "Portfolio Website",
+      "description": "A modern and responsive personal portfolio website showcasing my skills, projects, certifications, and contact details. Built with HTML, CSS, and JavaScript with smooth navigation and a clean UI.",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "image": "/image/portfolio.png",
+      "live_link": "https://sonuportfolio0625.netlify.app/",
+      "icon": "globe",
+      "featured": true,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "title": "E-commerce Website - Darkside",
+      "description": "A responsive e-commerce website with product listings, shopping cart, checkout flow, and smooth user experience. Designed with a modern UI and built using frontend technologies with backend support.",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Node.js"
+      ],
+      "image": "/image/e-comm.jpg",
+      "live_link": "https://darksideee.netlify.app/",
+      "icon": "shopping-cart",
+      "featured": true,
+      "created_at": "2024-02-01T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Coffee Website",
+      "description": "A full-stack coffee website with a modern UI, product sections, cart functionality, backend APIs, and database integration. Designed to provide a clean and smooth ordering experience.",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB"
+      ],
+      "image": "/image/coffee.png",
+      "live_link": "https://darkside-coffee.onrender.com/",
+      "icon": "coffee",
+      "featured": false,
+      "created_at": "2024-03-01T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "title": "Food Website",
+      "description": "A responsive food website showcasing food items, recipes, categories, and contact sections. Built with modern design, attractive visuals, and interactive UI components.",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "image": "/image/food.png",
+      "icon": "utensils",
+      "featured": false,
+      "created_at": "2024-04-01T00:00:00.000Z"
+    },
+    {
+      "id": "5",
+      "title": "Travel Website",
+      "description": "A responsive travel website designed to showcase destinations, travel tips, booking inquiry sections, and smooth animations for a better user experience.",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "image": "/image/travel.png",
+      "icon": "plane",
+      "featured": false,
+      "created_at": "2024-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "6",
+      "title": "Maze-Solving Robot Car",
+      "description": "An autonomous robot car designed to solve mazes using IR sensors, Arduino UNO, and L298N motor driver. It uses path-following logic and sensor-based decision-making.",
+      "tags": [
+        "Arduino",
+        "C++",
+        "IR Sensors",
+        "L298N Motor Driver"
+      ],
+      "image": "/image/maze.jpg",
+      "icon": "cpu",
+      "featured": false,
+      "created_at": "2024-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "7",
+      "title": "AtomQuest Goal Setting & Tracking Portal",
+      "description": "A digital goal-setting and tracking portal designed to help organizations manage employee goals, quarterly check-ins, alignment, visibility, and performance tracking.",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "image": "/image/atomquest.png",
+      "live_link": "https://atom-gkdo.onrender.com/",
+      "icon": "target",
+      "featured": false,
+      "created_at": "2024-07-01T00:00:00.000Z"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend",
+      "icon": "code",
+      "items": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React.js"
+      ]
+    },
+    {
+      "category": "Backend & Databases",
+      "icon": "server",
+      "items": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "MySQL"
+      ]
+    },
+    {
+      "category": "Programming & Tools",
+      "icon": "terminal",
+      "items": [
+        "C++",
+        "DSA",
+        "Python",
+        "C",
+        "Git & GitHub",
+        "UI/UX Design",
+        "AI/ML Basics"
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "id": "2",
+      "title": "AWS Cloud Practitioner Essentials",
+      "issuer": "AWS",
+      "description": "Completed AWS Cloud Practitioner Essentials and gained understanding of cloud computing fundamentals, AWS services, cloud architecture, security, and deployment concepts.",
+      "image": "/image/aws.png",
+      "completed_at": "",
+      "icon": "award"
+    },
+    {
+      "id": "3",
+      "title": "6-Week Internship in Artificial Intelligence & Machine Learning",
+      "issuer": "Edunet Foundation / AICTE",
+      "description": "Completed a 6-week AI/ML internship focused on machine learning fundamentals, data processing, model building, and practical AI-based project development.",
+      "image": "/image/edunet-ai.png",
+      "completed_at": "",
+      "icon": "award"
+    },
+    {
+      "id": "4",
+      "title": "Accenture Developer & Technology Job Simulation",
+      "issuer": "Forage",
+      "description": "Completed a virtual job simulation focused on software development, technology consulting, problem-solving, and real-world development tasks.",
+      "image": "/image/accenture.jpeg",
+      "completed_at": "",
+      "icon": "award"
+    },
+    {
+      "id": "5",
+      "title": "Software Engineering Job Simulation",
+      "issuer": "JPMorgan Chase & Co. - Forage",
+      "description": "Completed JPMorgan Chase Software Engineering Job Simulation and gained practical experience in software engineering workflows, debugging, code optimization, and real-world engineering tasks.",
+      "image": "/image/jp.jpg",
+      "completed_at": "",
+      "icon": "award"
+    },
+    {
+      "id": "6",
+      "title": "GenAI-Powered Data Analytics Job Simulation",
+      "issuer": "Tata - Forage",
+      "description": "Completed Tata GenAI-Powered Data Analytics Job Simulation, learning how generative AI can support data analysis, insights generation, automation, and business decision-making.",
+      "image": "/image/tata.png",
+      "completed_at": "",
+      "icon": "award"
+    },
+    {
+      "id": "7",
+      "title": "India AI Impact Buildathon",
+      "issuer": "HCL GUVI / AI Impact Summit",
+      "description": "Participated in the India AI Impact Buildathon, a nationwide AI innovation challenge conducted at India AI Impact Summit 2026, demonstrating AI-led problem solving and solution-building skills.",
+      "image": "/image/hcl.jpeg",
+      "completed_at": "",
+      "icon": "award"
+    },
+    {
+      "id": "8",
+      "title": "EY Techathon 6.0",
+      "issuer": "EY / Unstop",
+      "description": "Participated in Round 1: Executive Summary Submission of EY Techathon 6.0, gaining exposure to technology-driven problem solving, innovation, and structured solution presentation.",
+      "image": "/image/ey.jpeg",
+      "completed_at": "",
+      "icon": "award"
+    },
+    {
+      "id": "9",
+      "title": "Python Certification",
+      "issuer": "Python",
+      "description": "Completed Python certification covering programming fundamentals, logic building, and practical Python concepts.",
+      "image": "/image/pd.png",
+      "completed_at": "",
+      "icon": "award"
+    },
+    {
+      "id": "10",
+      "title": "UI/UX Design Certification",
+      "issuer": "Interface Design",
+      "description": "Completed UI/UX design certification focused on user-friendly, responsive, and visually appealing web interfaces.",
+      "image": "/image/ui.png",
+      "completed_at": "",
+      "icon": "award"
+    }
+  ],
+  "experience": [
+    {
+      "id": "1",
+      "role": "6-Week Internship in Artificial Intelligence & Machine Learning",
+      "company": "Edunet Foundation / AICTE",
+      "period": "Internship",
+      "description": "Completed a 6-week AI/ML internship focused on machine learning fundamentals, data processing, model building, and practical AI-based project development.",
+      "image": "/image/edunet-ai.png"
+    },
+    {
+      "id": "2",
+      "role": "Accenture Developer & Technology Job Simulation",
+      "company": "Accenture (Forage)",
+      "period": "Forage",
+      "description": "Completed a virtual job simulation focused on software development, technology consulting, problem-solving, and real-world development tasks.",
+      "image": "/image/accenture.jpeg"
+    },
+    {
+      "id": "3",
+      "role": "Software Engineering Job Simulation",
+      "company": "JPMorgan Chase & Co. (Forage)",
+      "period": "Forage",
+      "description": "Completed JPMorgan Chase Software Engineering Job Simulation and gained practical experience in software engineering workflows, debugging, code optimization, and real-world engineering tasks.",
+      "image": "/image/jp.jpg"
+    },
+    {
+      "id": "4",
+      "role": "GenAI-Powered Data Analytics Job Simulation",
+      "company": "Tata (Forage)",
+      "period": "Forage",
+      "description": "Completed Tata GenAI-Powered Data Analytics Job Simulation, learning how generative AI can support data analysis, insights generation, automation, and business decision-making.",
+      "image": "/image/tata.png"
+    }
+  ],
+  "messages": [],
+  "analytics": {
+    "total_visits": 35,
+    "contact_submissions": 0,
+    "last_updated": "2026-06-10T11:09:00.149Z"
+  }
+}

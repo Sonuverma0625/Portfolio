@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Admin Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121f;
+      --surface2: #1a1a2e;
+      --border: rgba(255,255,255,0.08);
+      --text: #e8e4df;
+      --text-secondary: #a09a93;
+      --primary: #ff6b35;
+      --primary-glow: rgba(255, 107, 53, 0.2);
+      --success: #4ade80;
+      --danger: #f87171;
+      --warning: #fbbf24;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 240px;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 24px 0;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+    }
+
+    .sidebar-logo {
+      padding: 0 24px 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    .sidebar-logo h1 {
+      font-size: 18px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--text), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .sidebar-logo p {
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 24px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s;
+      border-left: 3px solid transparent;
+    }
+
+    .nav-item:hover, .nav-item.active {
+      color: var(--text);
+      background: var(--primary-glow);
+      border-left-color: var(--primary);
+    }
+
+    .nav-item i { width: 18px; height: 18px; }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 8px var(--success);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* Main Content */
+    .main {
+      margin-left: 240px;
+      flex: 1;
+      padding: 32px;
+      overflow-y: auto;
+    }
+
+    .page { display: none; }
+    .page.active { display: block; }
+
+    .page-header {
+      margin-bottom: 32px;
+    }
+
+    .page-header h2 {
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .page-header p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 80px; height: 80px;
+      background: var(--primary-glow);
+      border-radius: 50%;
+      transform: translate(20px, -20px);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .stat-value {
+      font-size: 40px;
+      font-weight: 800;
+      margin-top: 8px;
+      color: var(--primary);
+    }
+
+    .stat-sub {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    /* Table */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .card-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-header h3 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+    }
+
+    .badge-primary { background: var(--primary-glow); color: var(--primary); }
+    .badge-success { background: rgba(74,222,128,0.15); color: var(--success); }
+    .badge-danger  { background: rgba(248,113,113,0.15); color: var(--danger); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      text-align: left;
+      padding: 12px 24px;
+      font-size: 11px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: var(--surface2);
+      font-family: 'Space Mono', monospace;
+    }
+
+    td {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .msg-preview {
+      max-width: 280px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--text-secondary);
+    }
+
+    .msg-name { font-weight: 700; }
+    .msg-email { font-size: 12px; color: var(--text-secondary); font-family: 'Space Mono', monospace; }
+    .msg-date { font-size: 11px; color: var(--text-secondary); font-family: 'Space Mono', monospace; }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .btn-danger {
+      background: rgba(248,113,113,0.15);
+      color: var(--danger);
+    }
+
+    .btn-danger:hover { background: rgba(248,113,113,0.3); }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #0a0a0f;
+    }
+
+    .btn-primary:hover { opacity: 0.85; transform: scale(1.02); }
+
+    /* Message Detail Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      max-width: 560px;
+      width: 90%;
+      position: relative;
+    }
+
+    .modal h3 { font-size: 20px; margin-bottom: 8px; }
+    .modal-meta { font-size: 12px; color: var(--text-secondary); margin-bottom: 20px; font-family: 'Space Mono', monospace; }
+    .modal-body { color: var(--text-secondary); line-height: 1.7; font-size: 14px; }
+    .modal-close { position: absolute; top: 20px; right: 20px; cursor: pointer; color: var(--text-secondary); }
+    .modal-footer { margin-top: 24px; display: flex; justify-content: flex-end; gap: 12px; }
+
+    /* API Status */
+    .api-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--surface2);
+      border-radius: 12px;
+      font-size: 13px;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+    }
+
+    .api-offline { border-color: var(--danger); color: var(--danger); }
+    .api-online  { border-color: var(--success); color: var(--success); }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-secondary);
+    }
+
+    .empty-state i { margin-bottom: 16px; opacity: 0.3; }
+    .empty-state p { font-size: 14px; }
+
+    /* Local Messages Section */
+    .local-note {
+      background: rgba(251, 191, 36, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 13px;
+      color: var(--warning);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar { width: 64px; }
+      .sidebar-logo, .nav-item span, .sidebar-footer { display: none; }
+      .main { margin-left: 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <h1>Admin Panel</h1>
+      <p>Portfolio Backend</p>
+    </div>
+
+    <nav>
+      <div class="nav-item active" onclick="showPage('dashboard')" id="nav-dashboard">
+        <i data-lucide="layout-dashboard"></i>
+        <span>Dashboard</span>
+      </div>
+      <div class="nav-item" onclick="showPage('messages')" id="nav-messages">
+        <i data-lucide="mail"></i>
+        <span>Messages</span>
+      </div>
+      <div class="nav-item" onclick="showPage('projects')" id="nav-projects">
+        <i data-lucide="folder-open"></i>
+        <span>Projects</span>
+      </div>
+      <div class="nav-item" onclick="showPage('analytics')" id="nav-analytics">
+        <i data-lucide="bar-chart-2"></i>
+        <span>Analytics</span>
+      </div>
+      <div class="nav-item" onclick="window.open('../index.html','_blank')" style="margin-top:8px;">
+        <i data-lucide="external-link"></i>
+        <span>View Portfolio</span>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="status-badge">
+        <div class="status-dot" id="server-dot"></div>
+        <span id="server-status">Connecting...</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!-- Dashboard -->
+    <div class="page active" id="page-dashboard">
+      <div class="page-header">
+        <h2>Dashboard</h2>
+        <p>Portfolio backend overview</p>
+      </div>
+
+      <div id="api-status-banner" class="api-status api-offline">
+        <i data-lucide="alert-circle" style="width:16px;height:16px;flex-shrink:0"></i>
+        <span id="api-status-text">Checking API connection at http://localhost:3002...</span>
+      </div>
+
+      <div class="stats-grid" id="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Visits</div>
+          <div class="stat-value" id="stat-visits">—</div>
+          <div class="stat-sub">All time page views</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Messages</div>
+          <div class="stat-value" id="stat-messages">—</div>
+          <div class="stat-sub">Contact submissions</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Projects</div>
+          <div class="stat-value" id="stat-projects">—</div>
+          <div class="stat-sub">Portfolio projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Last Activity</div>
+          <div class="stat-value" style="font-size:20px;" id="stat-last">—</div>
+          <div class="stat-sub">Most recent update</div>
+        </div>
+      </div>
+
+      <!-- Local messages (offline fallback) -->
+      <div id="local-note" class="local-note" style="display:none">
+        <i data-lucide="info" style="width:16px;height:16px;flex-shrink:0;margin-top:2px"></i>
+        <span>Backend server is <strong>offline</strong>. Showing messages stored locally in browser. Start the server with <code style="background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:4px;">cd backend && npm install && npm start</code> to enable full functionality.</span>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Recent Messages</h3>
+          <span class="badge badge-primary" id="recent-count">0</span>
+        </div>
+        <div id="recent-messages-body">
+          <div class="empty-state">
+            <i data-lucide="inbox" style="width:48px;height:48px;display:block;margin:0 auto 16px"></i>
+            <p>No messages yet. Contact form submissions will appear here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="page" id="page-messages">
+      <div class="page-header">
+        <h2>Messages</h2>
+        <p>All contact form submissions</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Inbox</h3>
+          <span class="badge badge-primary" id="inbox-count">0</span>
+        </div>
+        <div id="messages-table-body">
+          <div class="empty-state">
+            <i data-lucide="mail-open" style="width:48px;height:48px;display:block;margin:0 auto 16px"></i>
+            <p>No messages yet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="page" id="page-projects">
+      <div class="page-header">
+        <h2>Projects</h2>
+        <p>Portfolio projects from database</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>All Projects</h3>
+          <span class="badge badge-primary" id="projects-count">0</span>
+        </div>
+        <div id="projects-table-body">
+          <div class="empty-state"><p>Loading...</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics -->
+    <div class="page" id="page-analytics">
+      <div class="page-header">
+        <h2>Analytics</h2>
+        <p>Site performance data</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Page Visits</div>
+          <div class="stat-value" id="ana-visits">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Contact Rate</div>
+          <div class="stat-value" id="ana-contacts">—</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>API Endpoints</h3></div>
+        <table>
+          <thead><tr><th>Endpoint</th><th>Method</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>/api/portfolio</code></td><td><span class="badge badge-success">GET</span></td><td>Portfolio info</td></tr>
+            <tr><td><code>/api/projects</code></td><td><span class="badge badge-success">GET</span></td><td>All projects</td></tr>
+            <tr><td><code>/api/skills</code></td><td><span class="badge badge-success">GET</span></td><td>Skill categories</td></tr>
+            <tr><td><code>/api/certificates</code></td><td><span class="badge badge-success">GET</span></td><td>Certificates & awards</td></tr>
+            <tr><td><code>/api/experience</code></td><td><span class="badge badge-success">GET</span></td><td>Work experience</td></tr>
+            <tr><td><code>/api/contact</code></td><td><span class="badge badge-primary">POST</span></td><td>Submit contact message</td></tr>
+            <tr><td><code>/api/messages</code></td><td><span class="badge badge-success">GET</span></td><td>View all messages</td></tr>
+            <tr><td><code>/api/messages/:id</code></td><td><span class="badge badge-danger">DELETE</span></td><td>Delete message</td></tr>
+            <tr><td><code>/api/analytics</code></td><td><span class="badge badge-success">GET</span></td><td>Site analytics</td></tr>
+            <tr><td><code>/api/analytics/visit</code></td><td><span class="badge badge-primary">POST</span></td><td>Record a visit</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Message Detail Modal -->
+  <div class="modal-overlay" id="msg-modal">
+    <div class="modal">
+      <div class="modal-close" onclick="closeModal()">
+        <i data-lucide="x" style="width:20px;height:20px"></i>
+      </div>
+      <h3 id="modal-subject">Subject</h3>
+      <div class="modal-meta">
+        <span id="modal-name"></span> &bull; <span id="modal-email"></span> &bull; <span id="modal-date"></span>
+      </div>
+      <div class="modal-body" id="modal-message"></div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" id="modal-delete-btn">Delete</button>
+        <button class="btn btn-primary" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const API = 'http://localhost:3002/api';
+    let allMessages = [];
+    let allProjects = [];
+    let serverOnline = false;
+    let currentModalId = null;
+
+    // ── Navigation ──────────────────────────────────────────────────────────────
+    function showPage(name) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      document.getElementById('page-' + name).classList.add('active');
+      document.getElementById('nav-' + name).classList.add('active');
+      if (name === 'messages') renderMessages(allMessages);
+      if (name === 'projects') renderProjects(allProjects);
+      if (name === 'analytics') loadAnalytics();
+    }
+
+    // ── API Fetch wrapper ───────────────────────────────────────────────────────
+    async function apiFetch(endpoint) {
+      const r = await fetch(API + endpoint);
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }
+
+    // ── Check server + load data ────────────────────────────────────────────────
+    async function init() {
+      try {
+        const info = await apiFetch('');
+        serverOnline = true;
+        document.getElementById('server-dot').style.background = 'var(--success)';
+        document.getElementById('server-status').textContent = 'Server online';
+        document.getElementById('api-status-banner').className = 'api-status api-online';
+        document.getElementById('api-status-text').textContent = '✓ Connected to backend API at http://localhost:3002';
+        await loadDashboard();
+      } catch (e) {
+        serverOnline = false;
+        document.getElementById('server-dot').style.background = 'var(--danger)';
+        document.getElementById('server-status').textContent = 'Server offline';
+        document.getElementById('api-status-banner').className = 'api-status api-offline';
+        document.getElementById('api-status-text').textContent = '✗ Backend offline. Run: cd backend && npm install && npm start';
+        document.getElementById('local-note').style.display = 'flex';
+        loadLocalMessages();
+        loadLocalProjects();
+      }
+    }
+
+    async function loadDashboard() {
+      // Analytics
+      try {
+        const { data } = await apiFetch('/analytics');
+        document.getElementById('stat-visits').textContent = data.total_visits.toLocaleString();
+        document.getElementById('stat-last').textContent = new Date(data.last_updated).toLocaleDateString();
+        document.getElementById('ana-visits').textContent = data.total_visits;
+        document.getElementById('ana-contacts').textContent = data.contact_submissions;
+      } catch (_) {}
+
+      // Messages
+      try {
+        const { data } = await apiFetch('/messages');
+        allMessages = data;
+        document.getElementById('stat-messages').textContent = data.length;
+        document.getElementById('recent-count').textContent = data.length;
+        document.getElementById('inbox-count').textContent = data.length;
+        renderRecentMessages(data.slice(0, 5));
+      } catch (_) {}
+
+      // Projects
+      try {
+        const { data, count } = await apiFetch('/projects');
+        allProjects = data;
+        document.getElementById('stat-projects').textContent = count;
+        document.getElementById('projects-count').textContent = count;
+      } catch (_) {}
+    }
+
+    async function loadAnalytics() {
+      if (!serverOnline) return;
+      try {
+        const { data } = await apiFetch('/analytics');
+        document.getElementById('ana-visits').textContent = data.total_visits;
+        document.getElementById('ana-contacts').textContent = data.contact_submissions;
+      } catch (_) {}
+    }
+
+    // ── Local storage fallback ──────────────────────────────────────────────────
+    function loadLocalMessages() {
+      const stored = JSON.parse(localStorage.getItem('portfolio_messages') || '[]');
+      allMessages = stored;
+      document.getElementById('stat-messages').textContent = stored.length;
+      document.getElementById('recent-count').textContent = stored.length;
+      document.getElementById('inbox-count').textContent = stored.length;
+      renderRecentMessages(stored.slice(0, 5));
+    }
+
+    function loadLocalProjects() {
+      // Use static fallback data
+      allProjects = [
+        { id: '1', title: 'Portfolio Website', tags: ['HTML', 'CSS', 'JavaScript'], featured: true },
+        { id: '2', title: 'E-commerce Website', tags: ['HTML', 'CSS', 'JavaScript', 'Node.js'], featured: true },
+        { id: '3', title: 'Maze-Solving Robot Car', tags: ['Arduino', 'C++', 'IR Sensors', 'L298N Motor Driver'], featured: false },
+        { id: '4', title: 'Food Website', tags: ['HTML', 'CSS', 'JavaScript'], featured: false },
+        { id: '5', title: 'Travel Website', tags: ['HTML', 'CSS', 'JavaScript'], featured: false }
+      ];
+      document.getElementById('stat-projects').textContent = allProjects.length;
+      document.getElementById('projects-count').textContent = allProjects.length;
+    }
+
+    // ── Render helpers ──────────────────────────────────────────────────────────
+    function renderRecentMessages(msgs) {
+      const container = document.getElementById('recent-messages-body');
+      if (!msgs.length) {
+        container.innerHTML = `<div class="empty-state"><p>No messages yet. Contact form submissions will appear here.</p></div>`;
+        return;
+      }
+      container.innerHTML = `
+        <table>
+          <thead><tr><th>Name</th><th>Subject</th><th>Date</th><th></th></tr></thead>
+          <tbody>
+            ${msgs.map(m => `
+              <tr>
+                <td><div class="msg-name">${esc(m.name)}</div><div class="msg-email">${esc(m.email)}</div></td>
+                <td><div class="msg-preview">${esc(m.subject || 'No Subject')}</div></td>
+                <td class="msg-date">${new Date(m.created_at).toLocaleDateString()}</td>
+                <td><button class="btn btn-primary" onclick="openModal(${JSON.stringify(m).replace(/"/g,'&quot;')})">View</button></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>`;
+    }
+
+    function renderMessages(msgs) {
+      const container = document.getElementById('messages-table-body');
+      document.getElementById('inbox-count').textContent = msgs.length;
+      if (!msgs.length) {
+        container.innerHTML = `<div class="empty-state"><p>No messages yet.</p></div>`;
+        return;
+      }
+      container.innerHTML = `
+        <table>
+          <thead><tr><th>Name / Email</th><th>Subject</th><th>Message Preview</th><th>Date</th><th>Actions</th></tr></thead>
+          <tbody>
+            ${msgs.map(m => `
+              <tr>
+                <td><div class="msg-name">${esc(m.name)}</div><div class="msg-email">${esc(m.email)}</div></td>
+                <td>${esc(m.subject || 'No Subject')}</td>
+                <td class="msg-preview">${esc(m.message)}</td>
+                <td class="msg-date">${new Date(m.created_at).toLocaleString()}</td>
+                <td style="display:flex;gap:8px">
+                  <button class="btn btn-primary" onclick="openModal(${JSON.stringify(m).replace(/"/g,'&quot;')})">View</button>
+                  <button class="btn btn-danger" onclick="deleteMessage('${m.id}')">Delete</button>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>`;
+    }
+
+    function renderProjects(projects) {
+      const container = document.getElementById('projects-table-body');
+      if (!projects.length) {
+        container.innerHTML = `<div class="empty-state"><p>No projects found.</p></div>`;
+        return;
+      }
+      container.innerHTML = `
+        <table>
+          <thead><tr><th>Title</th><th>Tags</th><th>Featured</th></tr></thead>
+          <tbody>
+            ${projects.map(p => `
+              <tr>
+                <td style="font-weight:700">${esc(p.title)}</td>
+                <td>${p.tags.map(t => `<span class="badge badge-primary" style="margin-right:4px">${esc(t)}</span>`).join('')}</td>
+                <td>${p.featured ? '<span class="badge badge-success">Yes</span>' : '<span class="badge" style="background:rgba(255,255,255,0.05);color:var(--text-secondary)">No</span>'}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>`;
+    }
+
+    // ── Modal ───────────────────────────────────────────────────────────────────
+    function openModal(m) {
+      currentModalId = m.id;
+      document.getElementById('modal-subject').textContent = m.subject || 'No Subject';
+      document.getElementById('modal-name').textContent = m.name;
+      document.getElementById('modal-email').textContent = m.email;
+      document.getElementById('modal-date').textContent = new Date(m.created_at).toLocaleString();
+      document.getElementById('modal-message').textContent = m.message;
+      document.getElementById('modal-delete-btn').onclick = () => { deleteMessage(m.id); closeModal(); };
+      document.getElementById('msg-modal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('msg-modal').classList.remove('open');
+    }
+
+    // ── Delete message ──────────────────────────────────────────────────────────
+    async function deleteMessage(id) {
+      if (serverOnline) {
+        try {
+          await fetch(API + '/messages/' + id, { method: 'DELETE' });
+        } catch (_) {}
+      }
+      // Remove from local storage too
+      const stored = JSON.parse(localStorage.getItem('portfolio_messages') || '[]');
+      const updated = stored.filter(m => m.id !== id);
+      localStorage.setItem('portfolio_messages', JSON.stringify(updated));
+
+      allMessages = allMessages.filter(m => m.id !== id);
+      renderMessages(allMessages);
+      renderRecentMessages(allMessages.slice(0, 5));
+      document.getElementById('stat-messages').textContent = allMessages.length;
+      document.getElementById('recent-count').textContent = allMessages.length;
+      document.getElementById('inbox-count').textContent = allMessages.length;
+    }
+
+    // ── Utilities ───────────────────────────────────────────────────────────────
+    function esc(str) {
+      return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    // ── Init ────────────────────────────────────────────────────────────────────
+    lucide.createIcons();
+    init();
+
+    // Poll for new messages every 30s
+    setInterval(() => { if (serverOnline) loadDashboard(); }, 30000);
+  </script>
+</body>
+</html>

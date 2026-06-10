@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonu Verma | Darkside Portfolio</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=mobile-side-nav">
+ </head>
+ <body class="h-full">
+  <div class="portfolio-wrap" id="app">
+   <!-- Custom Cursor -->
+   <div class="cursor-dot" id="cursor"></div><!-- Background Orbs -->
+   <div class="glow-orb orb-1"></div>
+   <div class="glow-orb orb-2"></div>
+   <div class="glow-orb orb-3"></div><!-- Navigation -->
+   <nav class="fixed top-0 left-0 w-full z-50 px-8 py-5 flex justify-between items-center nav-bg">
+    <div class="font-bold text-xl tracking-tight font-mono-space" id="nav-name">
+     Darkside
+    </div>
+    <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+     <i data-lucide="menu" class="icon-md"></i>
+    </button>
+    <div class="nav-links flex gap-8 text-sm" id="nav-links">
+     <a href="#home" class="nav-link">Home</a> <a href="#about" class="nav-link">About</a> <a href="#skills" class="nav-link">Skills</a> <a href="#work" class="nav-link">Projects</a> <a href="#certificates" class="nav-link">Certificates</a> <a href="#experience" class="nav-link">Experience</a> <a href="#resume" class="nav-link">Resume</a> <a href="#contact" class="nav-link">Contact</a>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="home" class="relative min-h-full flex items-center justify-center px-8 scene-3d home-section">
+    <div class="geometric-bg geometric-1"></div>
+    <div class="geometric-bg geometric-2"></div>
+    <div class="grid md:grid-cols-2 gap-12 items-center mx-auto relative z-10 w-full hero-grid">
+     <div class="hero-copy">
+      <p class="section-title anim-slide-up mb-4">Welcome to my portfolio</p>
+      <h1 id="hero-name" class="text-5xl md:text-7xl font-extrabold leading-tight anim-slide-up delay-1 anim-text-reveal hero-title-gradient">Hi, I'm Sonu</h1>
+      <div id="hero-tagline" class="running-tagline mt-4 anim-slide-up delay-2 font-mono-space" aria-label="Full Stack Developer | C++ Programmer | AI/ML Enthusiast">
+       <div class="running-tagline-track">
+        <span>Full Stack Developer</span><b aria-hidden="true">|</b><span>C++ Programmer</span><b aria-hidden="true">|</b><span>AI/ML Enthusiast</span>
+        <span aria-hidden="true">Full Stack Developer</span><b aria-hidden="true">|</b><span aria-hidden="true">C++ Programmer</span><b aria-hidden="true">|</b><span aria-hidden="true">AI/ML Enthusiast</span>
+       </div>
+      </div>
+      <p id="intro-text" class="text-base leading-relaxed mt-4 anim-slide-up delay-3 color-secondary max-w-400">I am a passionate Full Stack Developer and B.Tech ECE student with strong skills in MERN Stack, C++, DSA, Python, MySQL, MongoDB, and AI/ML. I enjoy building modern, responsive, and user-friendly web applications that combine clean design with powerful functionality. My goal is to create real-world projects that solve problems and deliver smooth digital experiences.</p>
+      <div class="mt-10 flex gap-4 anim-slide-up delay-4"><a href="#about" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all hover:scale-105 bg-primary text-dark"> <span>Explore Now</span> <i data-lucide="arrow-right" class="icon-sm"></i> </a> <a href="#work" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold transition-all hover:scale-105 border border-current color-primary"> <span>View Projects</span> <i data-lucide="briefcase" class="icon-sm"></i> </a>
+      </div>
+     </div>
+     <div class="anim-slide-up delay-2 hero-visual">
+      <div class="relative">
+       <div class="absolute inset-0 rounded-2xl hero-photo-bg"></div>
+       <div id="hero-photo" class="w-full aspect-square rounded-2xl overflow-hidden flex items-center justify-center hero-photo-container"><img src="/image/self3.png" alt="Sonu Verma" class="profile-image">
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Work Section -->
+   <section id="work" class="relative px-8 py-24 max-w-6xl mx-auto w-full">
+    <p class="section-title anim-fade-rotate">Selected Work</p>
+    <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-16 anim-fade-rotate delay-1">Projects</h2>
+     <div class="grid md:grid-cols-2 gap-8 scene-3d">
+      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-2">
+       <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-1 media-frame">
+        <img src="/image/portfolio.png" alt="Portfolio Website preview" class="card-image">
+       </div>
+       <h3 class="text-xl font-bold">Portfolio Website</h3>
+       <p class="mt-2 text-sm color-secondary">A modern and responsive personal portfolio website showcasing my skills, projects, certifications, and contact details. Built with HTML, CSS, and JavaScript with smooth navigation and a clean UI.</p>
+       <div class="flex flex-wrap gap-2 mt-4">
+        <span class="text-xs px-3 py-1 rounded-full project-tag">HTML</span> <span class="text-xs px-3 py-1 rounded-full project-tag">CSS</span> <span class="text-xs px-3 py-1 rounded-full project-tag">JavaScript</span>
+       </div>
+       <a href="https://sonuportfolio0625.netlify.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold color-primary mt-5">Live Site <i data-lucide="external-link" class="icon-sm"></i></a>
+      </div>
+      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-3">
+       <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-2 media-frame">
+        <img src="/image/e-comm.jpg" alt="Darkside E-commerce Website preview" class="card-image">
+       </div>
+       <h3 class="text-xl font-bold">E-commerce Website - Darkside</h3>
+       <p class="mt-2 text-sm color-secondary">A responsive e-commerce website with product listings, shopping cart, checkout flow, and smooth user experience. Designed with a modern UI and built using frontend technologies with backend support.</p>
+       <div class="flex flex-wrap gap-2 mt-4">
+        <span class="text-xs px-3 py-1 rounded-full project-tag">HTML</span> <span class="text-xs px-3 py-1 rounded-full project-tag">CSS</span> <span class="text-xs px-3 py-1 rounded-full project-tag">JavaScript</span> <span class="text-xs px-3 py-1 rounded-full project-tag">Node.js</span>
+       </div>
+       <a href="https://darksideee.netlify.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold color-primary mt-5">Live Site <i data-lucide="external-link" class="icon-sm"></i></a>
+      </div>
+      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-4">
+       <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-3 media-frame">
+        <img src="/image/coffee.png" alt="Coffee Website preview" class="card-image">
+       </div>
+       <h3 class="text-xl font-bold">Coffee Website</h3>
+       <p class="mt-2 text-sm color-secondary">A full-stack coffee website with a modern UI, product sections, cart functionality, backend APIs, and database integration. Designed to provide a clean and smooth ordering experience.</p>
+       <div class="flex flex-wrap gap-2 mt-4">
+        <span class="text-xs px-3 py-1 rounded-full project-tag">HTML</span> <span class="text-xs px-3 py-1 rounded-full project-tag">CSS</span> <span class="text-xs px-3 py-1 rounded-full project-tag">JavaScript</span> <span class="text-xs px-3 py-1 rounded-full project-tag">Node.js</span> <span class="text-xs px-3 py-1 rounded-full project-tag">Express.js</span> <span class="text-xs px-3 py-1 rounded-full project-tag">MongoDB</span>
+       </div>
+       <a href="https://darkside-coffee.onrender.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold color-primary mt-5">Live Site <i data-lucide="external-link" class="icon-sm"></i></a>
+      </div>
+      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5">
+       <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-4 media-frame">
+        <img src="/image/food.png" alt="Food Website preview" class="card-image">
+       </div>
+       <h3 class="text-xl font-bold">Food Website</h3>
+       <p class="mt-2 text-sm color-secondary">A responsive food website showcasing food items, recipes, categories, and contact sections. Built with modern design, attractive visuals, and interactive UI components.</p>
+       <div class="flex flex-wrap gap-2 mt-4">
+        <span class="text-xs px-3 py-1 rounded-full project-tag">HTML</span> <span class="text-xs px-3 py-1 rounded-full project-tag">CSS</span> <span class="text-xs px-3 py-1 rounded-full project-tag">JavaScript</span>
+       </div>
+      </div>
+      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5">
+       <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-1 media-frame">
+        <img src="/image/travel.png" alt="Travel Website preview" class="card-image">
+       </div>
+       <h3 class="text-xl font-bold">Travel Website</h3>
+       <p class="mt-2 text-sm color-secondary">A responsive travel website designed to showcase destinations, travel tips, booking inquiry sections, and smooth animations for a better user experience.</p>
+       <div class="flex flex-wrap gap-2 mt-4">
+        <span class="text-xs px-3 py-1 rounded-full project-tag">HTML</span> <span class="text-xs px-3 py-1 rounded-full project-tag">CSS</span> <span class="text-xs px-3 py-1 rounded-full project-tag">JavaScript</span>
+       </div>
+      </div>
+      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5">
+       <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-3 media-frame">
+        <img src="/image/maze.jpg" alt="Maze-Solving Robot Car" class="card-image">
+       </div>
+       <h3 class="text-xl font-bold">Maze-Solving Robot Car</h3>
+       <p class="mt-2 text-sm color-secondary">An autonomous robot car designed to solve mazes using IR sensors, Arduino UNO, and L298N motor driver. It uses path-following logic and sensor-based decision-making.</p>
+       <div class="flex flex-wrap gap-2 mt-4">
+        <span class="text-xs px-3 py-1 rounded-full project-tag">Arduino</span> <span class="text-xs px-3 py-1 rounded-full project-tag">C++</span> <span class="text-xs px-3 py-1 rounded-full project-tag">IR Sensors</span> <span class="text-xs px-3 py-1 rounded-full project-tag">L298N Motor Driver</span>
+       </div>
+      </div>
+      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5">
+       <div class="w-full h-48 rounded-xl mb-6 flex items-center justify-center project-header-2 media-frame">
+        <img src="/image/atomquest.png" alt="AtomQuest Goal Setting and Tracking Portal preview" class="card-image">
+       </div>
+       <h3 class="text-xl font-bold">AtomQuest Goal Setting &amp; Tracking Portal</h3>
+       <p class="mt-2 text-sm color-secondary">A digital goal-setting and tracking portal designed to help organizations manage employee goals, quarterly check-ins, alignment, visibility, and performance tracking.</p>
+       <div class="flex flex-wrap gap-2 mt-4">
+        <span class="text-xs px-3 py-1 rounded-full project-tag">HTML</span> <span class="text-xs px-3 py-1 rounded-full project-tag">CSS</span> <span class="text-xs px-3 py-1 rounded-full project-tag">JavaScript</span> <span class="text-xs px-3 py-1 rounded-full project-tag">React</span> <span class="text-xs px-3 py-1 rounded-full project-tag">Node.js</span>
+       </div>
+       <a href="https://atom-gkdo.onrender.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold color-primary mt-5">Live Site <i data-lucide="external-link" class="icon-sm"></i></a>
+      </div>
+      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5 project-fill-card">
+       <div class="project-fill-header">
+        <div>
+         <p class="section-title mb-3">More Builds</p>
+         <h3 class="text-2xl md:text-3xl font-bold">Explore the rest of my work</h3>
+        </div>
+        <i data-lucide="github" class="project-fill-icon color-primary"></i>
+       </div>
+       <p class="mt-4 text-sm leading-relaxed color-secondary">I keep building full-stack apps, C++/DSA solutions, and AI/ML experiments. Visit my GitHub for more repositories, practice work, and upcoming project updates.</p>
+       <div class="project-fill-grid">
+        <div>
+         <span class="project-fill-number">500+</span>
+         <p class="stat-label-text">Days LeetCode Streak</p>
+        </div>
+        <div>
+         <span class="project-fill-number">MERN</span>
+         <p class="stat-label-text">Current Stack</p>
+        </div>
+        <div>
+         <span class="project-fill-number">AI/ML</span>
+         <p class="stat-label-text">Learning Focus</p>
+        </div>
+       </div>
+       <div class="project-fill-actions">
+        <a href="https://github.com/Sonuverma0625" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold color-primary">GitHub <i data-lucide="external-link" class="icon-sm"></i></a>
+        <a href="#contact" class="inline-flex items-center gap-2 text-sm font-semibold color-primary">Start a Project <i data-lucide="mail" class="icon-sm"></i></a>
+       </div>
+      </div>
+     </div>
+   </section><!-- About Section -->
+   <section id="about" class="relative px-8 py-24 max-w-5xl mx-auto w-full">
+    <p class="section-title">About Me</p>
+    <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-10">Background</h2>
+    <div class="about-showcase">
+     <div class="about-image-wrap">
+      <div class="about-photo-card rounded-2xl overflow-hidden">
+       <img src="/image/self2.png" alt="Sonu Verma" class="profile-image">
+      </div>
+     </div>
+     <div class="about-content-panel">
+      <p id="about-text" class="text-lg leading-relaxed color-secondary">I am Sonu, a Full Stack Developer, C++ Programmer, and AI/ML Enthusiast currently pursuing B.Tech in Electronics and Communication Engineering. I have experience in building responsive websites, full-stack applications, and interactive user interfaces using HTML, CSS, JavaScript, React, Node.js, Express.js, MongoDB, and MySQL.</p>
+      <p class="text-base leading-relaxed color-secondary mt-5">I am also focused on Data Structures and Algorithms using C++ and continuously improving my problem-solving skills through LeetCode. Along with web development, I have worked on AI/ML concepts through internships and certifications. I enjoy learning new technologies, building practical projects, and turning ideas into clean, functional, and scalable applications.</p>
+      <div class="about-highlight-row">
+       <span><strong>MERN</strong> Stack</span>
+       <span><strong>C++</strong> DSA</span>
+       <span><strong>AI/ML</strong> Basics</span>
+      </div>
+      <div class="about-metric-board">
+       <div class="about-metric-title">
+        <span>Current Focus</span>
+        <strong>2026</strong>
+       </div>
+       <div class="about-mini-meter" style="--level: 88%">
+        <div><span>Full Stack Projects</span><strong>88%</strong></div>
+        <i></i>
+       </div>
+       <div class="about-mini-meter" style="--level: 90%">
+        <div><span>C++ Problem Solving</span><strong>90%</strong></div>
+        <i></i>
+       </div>
+       <div class="about-mini-meter" style="--level: 74%">
+        <div><span>AI/ML Learning</span><strong>74%</strong></div>
+        <i></i>
+       </div>
+      </div>
+      <div class="mt-8 flex gap-6 about-link-row">
+       <a href="#contact" class="flex items-center gap-2 text-sm font-semibold color-primary"> <i data-lucide="mail" class="icon-sm"></i> Get in touch </a> <a href="https://github.com/Sonuverma0625" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm font-semibold color-primary"> <i data-lucide="github" class="icon-sm"></i> GitHub </a>
+      </div>
+     </div>
+     <div class="grid grid-cols-2 gap-4 about-stats-modern">
+       <div class="stat-tile">
+        <p class="stat-number">7</p>
+        <p class="stat-label-text">Projects</p>
+       </div>
+       <div class="stat-tile">
+        <p class="stat-number">9</p>
+        <p class="stat-label-text">Certifications</p>
+       </div>
+       <div class="stat-tile">
+        <p class="stat-number">3+</p>
+        <p class="stat-label-text">Virtual Job Simulations</p>
+       </div>
+       <div class="stat-tile">
+        <p class="stat-number">1</p>
+        <p class="stat-label-text">AI/ML Internship</p>
+       </div>
+       <div class="stat-tile col-span-2">
+        <p class="stat-number">500</p>
+        <p class="stat-label-text">Days LeetCode Streak</p>
+       </div>
+     </div>
+    </div>
+   </section><!-- Skills Section -->
+   <section id="skills" class="relative px-8 py-24 max-w-6xl mx-auto w-full">
+    <p class="section-title anim-fade-rotate">Technical Expertise</p>
+    <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-6 anim-fade-rotate delay-1">Skills</h2>
+    <p class="text-base leading-relaxed mb-16 color-secondary anim-fade-rotate delay-2 max-w-4xl">I have a strong foundation in full-stack web development, programming, databases, and problem-solving. I build responsive frontend interfaces using HTML, CSS, JavaScript, and React, and develop backend APIs using Node.js, Express.js, MongoDB, and MySQL. I also use C++ for DSA and Python for automation and AI/ML learning.</p>
+    <div class="grid md:grid-cols-3 gap-8 scene-3d skills-dashboard">
+     <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-2 skill-card">
+      <div class="flex items-center gap-3 mb-6">
+       <i data-lucide="code" class="icon-lg color-primary"></i>
+       <h3 class="text-xl font-bold">Frontend</h3>
+      </div>
+      <div class="skill-meter-list">
+       <div class="skill-meter" style="--level: 95%"><div><span>HTML</span><strong>95%</strong></div><i></i></div>
+       <div class="skill-meter" style="--level: 90%"><div><span>CSS</span><strong>90%</strong></div><i></i></div>
+       <div class="skill-meter" style="--level: 88%"><div><span>JavaScript</span><strong>88%</strong></div><i></i></div>
+       <div class="skill-meter" style="--level: 82%"><div><span>React.js</span><strong>82%</strong></div><i></i></div>
+      </div>
+     </div>
+     <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-3 skill-card">
+      <div class="flex items-center gap-3 mb-6">
+       <i data-lucide="server" class="icon-lg color-primary"></i>
+       <h3 class="text-xl font-bold">Backend &amp; Databases</h3>
+      </div>
+      <div class="skill-meter-list">
+       <div class="skill-meter" style="--level: 84%"><div><span>Node.js</span><strong>84%</strong></div><i></i></div>
+       <div class="skill-meter" style="--level: 78%"><div><span>Express.js</span><strong>78%</strong></div><i></i></div>
+       <div class="skill-meter" style="--level: 80%"><div><span>MongoDB</span><strong>80%</strong></div><i></i></div>
+       <div class="skill-meter" style="--level: 76%"><div><span>MySQL</span><strong>76%</strong></div><i></i></div>
+      </div>
+     </div>
+     <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-4 skill-card">
+      <div class="flex items-center gap-3 mb-6">
+       <i data-lucide="terminal" class="icon-lg color-primary"></i>
+       <h3 class="text-xl font-bold">Programming &amp; Tools</h3>
+      </div>
+      <div class="skill-meter-list">
+       <div class="skill-meter" style="--level: 90%"><div><span>C++ / DSA</span><strong>90%</strong></div><i></i></div>
+       <div class="skill-meter" style="--level: 82%"><div><span>Python</span><strong>82%</strong></div><i></i></div>
+       <div class="skill-meter" style="--level: 85%"><div><span>Git &amp; GitHub</span><strong>85%</strong></div><i></i></div>
+       <div class="skill-meter" style="--level: 72%"><div><span>AI/ML Basics</span><strong>72%</strong></div><i></i></div>
+       <div class="skill-meter" style="--level: 78%"><div><span>UI/UX Design</span><strong>78%</strong></div><i></i></div>
+      </div>
+     </div>
+     <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5 md:col-span-3 skill-cloud-card">
+      <div class="flex items-center gap-3 mb-6">
+       <i data-lucide="sparkles" class="icon-lg color-primary"></i>
+       <h3 class="text-xl font-bold">Technical Skills</h3>
+      </div>
+      <div class="flex flex-wrap gap-3">
+       <span class="text-xs px-3 py-1 rounded-full project-tag">HTML</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">CSS</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">JavaScript</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">React.js</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">Node.js</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">Express.js</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">MongoDB</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">MySQL</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">C++</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">DSA</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">Python</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">C</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">Git &amp; GitHub</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">UI/UX Design</span>
+       <span class="text-xs px-3 py-1 rounded-full project-tag">AI/ML Basics</span>
+      </div>
+     </div>
+    </div>
+   </section><!-- Certificates Section -->
+   <section id="certificates" class="relative px-8 py-24 max-w-6xl mx-auto w-full">
+    <p class="section-title anim-fade-rotate">Recognition</p>
+    <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-16 anim-fade-rotate delay-1">Certifications</h2>
+    <div class="grid md:grid-cols-2 gap-8 scene-3d">
+     <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-3">
+      <div class="certificate-media media-frame mb-6"><img src="/image/aws.png" alt="AWS Cloud Practitioner Essentials" class="card-image"></div>
+      <div class="flex justify-between items-start mb-4">
+       <div>
+        <h3 class="text-xl font-bold">AWS Cloud Practitioner Essentials</h3>
+        <p class="text-sm mt-1 color-secondary">AWS</p>
+       </div><i data-lucide="award" class="icon-lg color-primary"></i>
+      </div>
+      <p class="text-sm color-secondary">Completed AWS Cloud Practitioner Essentials and gained understanding of cloud computing fundamentals, AWS services, cloud architecture, security, and deployment concepts.</p>
+     </div>
+     <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-4">
+      <div class="certificate-media media-frame mb-6"><img src="/image/edunet-ai.png" alt="AI and Machine Learning Internship certificate" class="card-image"></div>
+      <div class="flex justify-between items-start mb-4">
+       <div>
+        <h3 class="text-xl font-bold">6-Week Internship in Artificial Intelligence &amp; Machine Learning</h3>
+        <p class="text-sm mt-1 color-secondary">Edunet Foundation / AICTE</p>
+       </div><i data-lucide="award" class="icon-lg color-primary"></i>
+      </div>
+      <p class="text-sm color-secondary">Completed a 6-week AI/ML internship focused on machine learning fundamentals, data processing, model building, and practical AI-based project development.</p>
+     </div>
+     <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5">
+      <div class="certificate-media media-frame mb-6"><img src="/image/accenture.jpeg" alt="Accenture Developer and Technology Job Simulation" class="card-image"></div>
+      <div class="flex justify-between items-start mb-4">
+       <div>
+        <h3 class="text-xl font-bold">Accenture Developer &amp; Technology Job Simulation</h3>
+        <p class="text-sm mt-1 color-secondary">Forage</p>
+       </div><i data-lucide="award" class="icon-lg color-primary"></i>
+      </div>
+      <p class="text-sm color-secondary">Completed a virtual job simulation focused on software development, technology consulting, problem-solving, and real-world development tasks.</p>
+     </div>
+     <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-2">
+      <div class="certificate-media media-frame mb-6"><img src="/image/jp.jpg" alt="JPMorgan Chase Software Engineering Job Simulation" class="card-image"></div>
+      <div class="flex justify-between items-start mb-4">
+       <div>
+        <h3 class="text-xl font-bold">Software Engineering Job Simulation</h3>
+        <p class="text-sm mt-1 color-secondary">JPMorgan Chase &amp; Co. - Forage</p>
+       </div><i data-lucide="award" class="icon-lg color-primary"></i>
+      </div>
+      <p class="text-sm color-secondary">Completed JPMorgan Chase Software Engineering Job Simulation and gained practical experience in software engineering workflows, debugging, code optimization, and real-world engineering tasks.</p>
+     </div>
+     <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-3">
+      <div class="certificate-media media-frame mb-6"><img src="/image/tata.png" alt="Tata GenAI-Powered Data Analytics Job Simulation" class="card-image"></div>
+      <div class="flex justify-between items-start mb-4">
+       <div>
+        <h3 class="text-xl font-bold">GenAI-Powered Data Analytics Job Simulation</h3>
+        <p class="text-sm mt-1 color-secondary">Tata - Forage</p>
+       </div><i data-lucide="award" class="icon-lg color-primary"></i>
+      </div>
+      <p class="text-sm color-secondary">Completed Tata GenAI-Powered Data Analytics Job Simulation, learning how generative AI can support data analysis, insights generation, automation, and business decision-making.</p>
+     </div>
+     <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-4">
+      <div class="certificate-media media-frame mb-6"><img src="/image/hcl.jpeg" alt="India AI Impact Buildathon certificate" class="card-image"></div>
+      <div class="flex justify-between items-start mb-4">
+       <div>
+        <h3 class="text-xl font-bold">India AI Impact Buildathon</h3>
+        <p class="text-sm mt-1 color-secondary">HCL GUVI / AI Impact Summit</p>
+       </div><i data-lucide="award" class="icon-lg color-primary"></i>
+      </div>
+      <p class="text-sm color-secondary">Participated in the India AI Impact Buildathon, a nationwide AI innovation challenge conducted at India AI Impact Summit 2026, demonstrating AI-led problem solving and solution-building skills.</p>
+     </div>
+     <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5">
+      <div class="certificate-media media-frame mb-6"><img src="/image/ey.jpeg" alt="EY Techathon 6.0 certificate" class="card-image"></div>
+      <div class="flex justify-between items-start mb-4">
+       <div>
+        <h3 class="text-xl font-bold">EY Techathon 6.0</h3>
+        <p class="text-sm mt-1 color-secondary">EY / Unstop</p>
+       </div><i data-lucide="award" class="icon-lg color-primary"></i>
+      </div>
+      <p class="text-sm color-secondary">Participated in Round 1: Executive Summary Submission of EY Techathon 6.0, gaining exposure to technology-driven problem solving, innovation, and structured solution presentation.</p>
+     </div>
+     <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-2">
+      <div class="certificate-media media-frame mb-6"><img src="/image/pd.png" alt="Python Certification" class="card-image"></div>
+      <div class="flex justify-between items-start mb-4">
+       <div>
+        <h3 class="text-xl font-bold">Python Certification</h3>
+        <p class="text-sm mt-1 color-secondary">Python</p>
+       </div><i data-lucide="award" class="icon-lg color-primary"></i>
+      </div>
+      <p class="text-sm color-secondary">Completed Python certification covering programming fundamentals, logic building, and practical Python concepts.</p>
+     </div>
+     <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-3">
+      <div class="certificate-media media-frame mb-6"><img src="/image/ui.png" alt="UI/UX Design Certification" class="card-image"></div>
+      <div class="flex justify-between items-start mb-4">
+       <div>
+        <h3 class="text-xl font-bold">UI/UX Design Certification</h3>
+        <p class="text-sm mt-1 color-secondary">Interface Design</p>
+       </div><i data-lucide="award" class="icon-lg color-primary"></i>
+      </div>
+      <p class="text-sm color-secondary">Completed UI/UX design certification focused on user-friendly, responsive, and visually appealing web interfaces.</p>
+     </div>
+    </div>
+   </section><!-- Experience Section -->
+   <section id="experience" class="relative px-8 py-24 max-w-5xl mx-auto w-full">
+    <p class="section-title anim-fade-rotate">Experience</p>
+    <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-16 anim-fade-rotate delay-1">Experience &amp; Job Simulations</h2>
+    <div class="grid md:grid-cols-2 gap-8 scene-3d experience-card-grid">
+      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-2 experience-item-card">
+        <div class="experience-media media-frame mb-5"><img src="/image/edunet-ai.png" alt="Edunet Foundation AI/ML Internship" class="card-image"></div>
+        <h3 class="text-xl font-bold">6-Week Internship in Artificial Intelligence &amp; Machine Learning</h3>
+        <p class="text-sm mt-1 color-primary">Edunet Foundation / AICTE</p>
+        <p class="mt-3 text-sm leading-relaxed color-secondary">Completed a 6-week AI/ML internship focused on machine learning fundamentals, data processing, model building, and practical AI-based project development.</p>
+      </div>
+      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-3 experience-item-card">
+        <div class="experience-media media-frame mb-5"><img src="/image/accenture.jpeg" alt="Accenture Developer and Technology Job Simulation" class="card-image"></div>
+        <h3 class="text-xl font-bold">Accenture Developer &amp; Technology Job Simulation</h3>
+        <p class="text-sm mt-1 color-primary">Accenture (Forage)</p>
+        <p class="mt-3 text-sm leading-relaxed color-secondary">Completed a virtual job simulation focused on software development, technology consulting, problem-solving, and real-world development tasks.</p>
+      </div>
+      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-4 experience-item-card">
+        <div class="experience-media media-frame mb-5"><img src="/image/jp.jpg" alt="JPMorgan Chase Software Engineering Job Simulation" class="card-image"></div>
+        <h3 class="text-xl font-bold">Software Engineering Job Simulation</h3>
+        <p class="text-sm mt-1 color-primary">JPMorgan Chase &amp; Co. (Forage)</p>
+        <p class="mt-3 text-sm leading-relaxed color-secondary">Completed JPMorgan Chase Software Engineering Job Simulation and gained practical experience in software engineering workflows, debugging, code optimization, and real-world engineering tasks.</p>
+      </div>
+      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-5 experience-item-card">
+        <div class="experience-media media-frame mb-5"><img src="/image/tata.png" alt="Tata GenAI-Powered Data Analytics Job Simulation" class="card-image"></div>
+        <h3 class="text-xl font-bold">GenAI-Powered Data Analytics Job Simulation</h3>
+        <p class="text-sm mt-1 color-primary">Tata (Forage)</p>
+        <p class="mt-3 text-sm leading-relaxed color-secondary">Completed Tata GenAI-Powered Data Analytics Job Simulation, learning how generative AI can support data analysis, insights generation, automation, and business decision-making.</p>
+      </div>
+   </div>
+   </section>
+   <section id="resume" class="relative px-8 py-24 max-w-5xl mx-auto w-full">
+    <p class="section-title anim-fade-rotate">Resume</p>
+    <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-6 anim-fade-rotate delay-1">Resume</h2>
+    <p class="text-lg mb-12 color-secondary anim-fade-rotate delay-2">Keep your latest resume ready for applications, recruiter calls, and portfolio sharing.</p>
+    <div class="resume-layout">
+     <div class="float-card project-card rounded-2xl p-8 resume-upload-card anim-fade-rotate delay-3">
+      <input id="resume-file" class="resume-file-input" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+      <label for="resume-file" class="resume-drop-zone">
+       <span class="resume-upload-icon"><i data-lucide="upload-cloud" class="icon-lg"></i></span>
+       <span class="resume-upload-title">Choose Resume File</span>
+       <span class="resume-upload-note">PDF, DOC, or DOCX up to 10 MB</span>
+      </label>
+      <div id="resume-status" class="resume-status">No resume uploaded yet.</div>
+     </div>
+     <div class="float-card project-card rounded-2xl p-8 resume-info-card anim-fade-rotate delay-4">
+      <div class="resume-info-head">
+       <div class="resume-file-icon"><i data-lucide="file-text" class="icon-lg"></i></div>
+       <div>
+        <p class="contact-info-label">Current Resume</p>
+        <h3 id="resume-name" class="text-xl font-bold">Waiting for upload</h3>
+       </div>
+      </div>
+      <div class="resume-meta-grid">
+       <div>
+        <span class="resume-meta-label">Size</span>
+        <strong id="resume-size">--</strong>
+       </div>
+       <div>
+        <span class="resume-meta-label">Updated</span>
+        <strong id="resume-date">--</strong>
+       </div>
+      </div>
+      <div class="resume-actions">
+       <button id="resume-view" type="button" class="resume-action-btn" disabled><i data-lucide="eye" class="icon-sm"></i>View</button>
+       <a id="resume-download" class="resume-action-btn" download hidden><i data-lucide="download" class="icon-sm"></i>Download</a>
+       <button id="resume-remove" type="button" class="resume-action-btn resume-remove-btn" disabled><i data-lucide="trash-2" class="icon-sm"></i>Remove</button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="contact" class="relative px-8 py-24 max-w-4xl mx-auto w-full">
+     <p class="section-title anim-fade-rotate">Get In Touch</p>
+     <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-4 anim-fade-rotate delay-1">Contact Me</h2>
+     <p class="text-lg mb-12 color-secondary anim-fade-rotate delay-2">Have a question, project idea, internship opportunity, or want to work together? Feel free to reach out through email or connect with me on social media.</p>
+
+     <div class="contact-grid">
+      <!-- Contact Form -->
+      <div class="float-card project-card rounded-2xl p-8 anim-fade-rotate delay-3">
+       <form id="contact-form" novalidate>
+        <div class="contact-form-row">
+         <div class="contact-field">
+          <label class="contact-label" for="cf-name">Your Name</label>
+          <input id="cf-name" name="name" type="text" class="contact-input" placeholder="Sonu" required>
+         </div>
+         <div class="contact-field">
+          <label class="contact-label" for="cf-email">Email Address</label>
+          <input id="cf-email" name="email" type="email" class="contact-input" placeholder="your@email.com" required>
+         </div>
+        </div>
+        <div class="contact-field">
+         <label class="contact-label" for="cf-subject">Subject</label>
+         <input id="cf-subject" name="subject" type="text" class="contact-input" placeholder="Project Inquiry">
+        </div>
+        <div class="contact-field">
+         <label class="contact-label" for="cf-message">Message</label>
+         <textarea id="cf-message" name="message" class="contact-input contact-textarea" placeholder="Tell me about your project..." rows="5" required></textarea>
+        </div>
+        <div id="cf-status" class="cf-status" style="display:none"></div>
+        <button type="submit" id="cf-submit" class="contact-submit">
+         <i data-lucide="send" class="icon-sm"></i>
+         <span>Send Message</span>
+        </button>
+       </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info anim-fade-rotate delay-4">
+       <div class="contact-info-item float-card project-card rounded-2xl p-6">
+        <div class="contact-info-icon"><i data-lucide="mail" class="icon-md color-primary"></i></div>
+        <div>
+         <p class="contact-info-label">Email</p>
+          <a href="mailto:vermasonu0625144@gmail.com" class="contact-info-value color-primary">vermasonu0625144@gmail.com</a>
+        </div>
+       </div>
+       <div class="contact-info-item float-card project-card rounded-2xl p-6">
+         <div class="contact-info-icon"><i data-lucide="phone" class="icon-md color-primary"></i></div>
+         <div>
+         <p class="contact-info-label">Phone</p>
+         <a href="tel:+919569695752" class="contact-info-value color-primary">+91 9569695752</a>
+        </div>
+       </div>
+       <div class="contact-info-item float-card project-card rounded-2xl p-6">
+         <div class="contact-info-icon"><i data-lucide="briefcase" class="icon-md color-primary"></i></div>
+         <div>
+         <p class="contact-info-label">Freelancing</p>
+         <a href="https://www.fiverr.com/darksideweb" target="_blank" rel="noopener noreferrer" class="contact-info-value color-primary">Fiverr @darksideweb</a>
+        </div>
+       </div>
+       <div class="contact-info-item float-card project-card rounded-2xl p-6">
+         <div class="contact-info-icon"><i data-lucide="graduation-cap" class="icon-md color-primary"></i></div>
+         <div>
+         <p class="contact-info-label">Currently</p>
+         <p class="contact-info-value">B.Tech Electronics &amp; Communication Engineering Student</p>
+        </div>
+       </div>
+       <div class="contact-socials float-card project-card rounded-2xl p-6">
+        <p class="contact-info-label" style="margin-bottom:16px">Find me on</p>
+        <div class="contact-social-links">
+         <a href="https://github.com/Sonuverma0625" target="_blank" rel="noopener noreferrer" class="contact-social-btn" aria-label="GitHub"><i data-lucide="github" class="icon-md"></i></a>
+         <a href="https://linkedin.com/in/sonu0625" target="_blank" rel="noopener noreferrer" class="contact-social-btn" aria-label="LinkedIn"><i data-lucide="linkedin" class="icon-md"></i></a>
+         <a href="https://x.com/Iam_sonu0625" target="_blank" rel="noopener noreferrer" class="contact-social-btn" aria-label="Twitter/X"><i data-lucide="twitter" class="icon-md"></i></a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   <!-- Footer -->
+   <footer class="px-8 py-8 text-center text-sm color-secondary footer-style">
+    <p>&copy; 2025 Darkside | All Rights Reserved</p>
+   </footer>
+  </div>
+  <script src="script.js?v=render-deploy"></script>
+ </body>
+</html>
