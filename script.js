@@ -105,10 +105,10 @@ const RESUME_STORE_NAME = 'resume_files';
 const RESUME_KEY = 'current';
 const RESUME_MAX_SIZE = 10 * 1024 * 1024;
 const PERMANENT_RESUME = {
-  name: 'fullstackresume.pdf',
-  size: 21486,
-  updatedAt: '2026-05-27T16:44:53+05:30',
-  url: 'resume/fullstackresume.pdf',
+  name: 'sonuresume.pdf',
+  size: 528867,
+  updatedAt: '2026-06-11T21:48:55+05:30',
+  url: 'resume/sonuresume.pdf',
   permanent: true
 };
 let activeResumeUrl = null;
@@ -170,6 +170,7 @@ function formatResumeSize(bytes) {
 
 function getResumeToDisplay(record) {
   if (!record) return PERMANENT_RESUME;
+  if (record.name === 'fullstackresume.pdf') return PERMANENT_RESUME;
   if (record.name === PERMANENT_RESUME.name && record.size === PERMANENT_RESUME.size) {
     return PERMANENT_RESUME;
   }
